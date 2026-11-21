@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lantern Harbor — Cari Perbedaan</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Lantern Harbor</h1>
+    <span id="hud-level">Babak 1 — Dermaga Senja</span>
+    <div id="hud">
+      <span id="hud-time" title="Sisa waktu">2:30</span>
+      <span>Skor <b id="hud-score">0</b></span>
+      <span>Terbaik <b id="hud-best">0</b></span>
+      <span id="hud-remaining">6 tersisa</span>
+      <span id="hud-hints">Petunjuk: 3</span>
+    </div>
+  </header>
+  <p id="hud-message">Selamat datang di pelabuhan lampion.</p>
+
+  <div id="play-area">
+    <div id="panels">
+      <div class="panel">
+        <h2>ASLI</h2>
+        <canvas id="panel-left" width="560" height="460" aria-label="Gambar asli"></canvas>
+      </div>
+      <div class="panel">
+        <h2>BERUBAH</h2>
+        <canvas id="panel-right" width="560" height="460" aria-label="Gambar berubah"></canvas>
+      </div>
+    </div>
+
+    <div id="controls">
+      <button id="btn-hint" type="button">Petunjuk (H)</button>
+      <button id="btn-restart" type="button">Ulang Babak (R)</button>
+      <button id="btn-mute" type="button">Suara: Hidup (M)</button>
+      <button id="btn-level-1" type="button">Babak 1</button>
+      <button id="btn-level-2" type="button">Babak 2</button>
+      <button id="btn-level-3" type="button">Babak 3</button>
+      <span id="keys">Klik perbedaan di kedua panel &middot; H petunjuk &middot; R ulang &middot; 1/2/3 pindah babak &middot; M bisu</span>
+    </div>
+  </div>
+</div>
+
+<div id="screen-title" class="overlay">
+  <div class="card">
+    <h2>Lantern Harbor</h2>
+    <p>Dua gambar pelabuhan senja yang nyaris identik. Temukan semua perbedaannya sebelum waktu habis!</p>
+    <p class="rules">
+      &bull; Tiga babak: Dermaga Senja (6 perbedaan), Pasar Lampion (8), Feri Tengah Malam (10).<br>
+      &bull; Klik perbedaan yang benar: +100 poin. Klik salah: &minus;25 poin dan panel bergoyang.<br>
+      &bull; Petunjuk (H): 3 kali per babak, menyorot satu perbedaan selama 4 detik.<br>
+      &bull; Selesaikan babak sebelum waktu habis untuk bonus waktu.
+    </p>
+    <button id="btn-start" class="primary" type="button">Mulai Bermain</button>
+  </div>
+</div>
+
+<div id="screen-between" class="overlay hidden">
+  <div class="card">
+    <h2 id="between-title">Babak selesai!</h2>
+    <p id="between-detail"></p>
+    <button id="btn-next" class="primary" type="button">Lanjut ke Babak Berikutnya</button>
+  </div>
+</div>
+
+<div id="screen-end" class="overlay hidden">
+  <div class="card">
+    <h2 id="end-title">Permainan selesai!</h2>
+    <p id="end-detail"></p>
+    <button id="btn-again" class="primary" type="button">Main Lagi</button>
+    <button id="btn-title" type="button">Kembali ke Judul</button>
+  </div>
+</div>
+
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/boot.js"></script>
+</body>
+</html>
